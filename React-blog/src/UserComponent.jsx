@@ -50,14 +50,30 @@ import { useState } from "react"
 
 // export default User
 
-const Counter = () =>{
-    const [count, setCount] = useState(0)
+// const Counter = () =>{
+//     const [count, setCount] = useState(0)
+//     return(
+//         <div>
+//             <h1>Counter: {count}</h1>
+//             <button onClick={()=>setCount(count + 1)}>Count</button>
+//         </div>
+//     )
+// }
+
+// export default Counter
+
+// function User(props){
+//     return(
+//         <div>
+//             <h2>name: {props.name},Role: {props.Role}</h2>
+//         </div>
+//     );
+// }
+function Res(props){
     return(
         <div>
-            <h1>Counter: {count}</h1>
-            <button onClick={()=>setCount(count + 1)}>Count</button>
+            <h2>name:{props.name}, Role:{props.Role}</h2>
         </div>
-    )
+    );
 }
-
-export default Counter
+export default Res
