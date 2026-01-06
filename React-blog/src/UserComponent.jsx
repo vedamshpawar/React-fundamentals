@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 // function Login(){
@@ -69,11 +69,61 @@ import { useState } from "react"
 //         </div>
 //     );
 // }
-function Res(props){
+// function Res(props){
+//     return(
+//         <div>
+//             <h2>name:{props.name}, Role:{props.Role}</h2>
+//         </div>
+//     );
+// }
+// export default Res
+
+// const User = ({user})=>{
+//     return(
+//         <div style={{
+//             border:"1px solid green",
+//             padding:"10px",
+//             margin:"10px",
+//             width:"400px",
+//             borderRadius:"10px",
+//         }}>
+//             <h2>name :{user.name}</h2>
+//             <h2>age :{user.age}</h2>
+//             <h2>email :{user.email}</h2>
+//         </div>
+//     );
+// }
+
+// export default User
+
+
+function CounterFunc({count, data}){
+
+    const [count, setCount] = useState(0)
+    const [data, setData] = useState(0)
+
+    function counter(){
+        console.log('counting the count')
+    };
+
+    function callOnce(){
+        console.log('call for one time')
+    };
+
+useEffect(()=>{
+    counter();
+},[]);
+
+useEffect(()=>{
+    callOnce();
+},[count]);
     return(
         <div>
-            <h2>name:{props.name}, Role:{props.Role}</h2>
+            <h2>this is useEffect</h2>
+            <button onClick={()=>setCount(count + 1)}>count {count}</button>
+            <button onClick={()=>setData(data + 1)}>data {data}</button>
         </div>
     );
 }
-export default Res
+
+export default CounterFunc;
