@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Res from "./UserComponent";
 import Skills from "./skills";
+import User from "./UserComponent";
+import CounterFunc from "./UserComponent";
 // import Counter from "./UserComponent";
 
 // function App(){
@@ -46,30 +48,103 @@ import Skills from "./skills";
 // }
 // export default App
 
+// function App(){
+//   const [name, setName] = useState("")
+//   const [password, setPassword] = useState("")
+//   const [email, setEmail] = useState("")
+//   return(
+//     <div>
+//       <h2>Controller component</h2>
+//       <form action="" method="get">
+//         <input type="text" value={name} placeholder="Enter a name" onChange={(event)=>setName(event.target.value)}/>
+//         <br /><br />
+//         <input type="password" value={password} placeholder="Enter a password" onChange={(event)=>setPassword(event.target.value)}/>
+//         <br /><br />
+//         <input type="email" value={email} placeholder="Enter a Email" onChange={(event)=>setEmail(event.target.value)}/>
+//         <br /><br />
+//         <button>submit</button>
+//         <button onClick={()=>{setName("");setPassword("");setEmail("")}}>clear</button>
+
+//         <h3>{name}</h3>
+//         <h3>{password}</h3>
+//         <h3>{email}</h3>
+//       </form>
+//       <Skills />
+//     </div>
+//   );
+// }
+
+// export default App
+
+
 function App(){
-  const [name, setName] = useState("")
-  const [password, setPassword] = useState("")
-  const [email, setEmail] = useState("")
+  // const userData = [
+  //   {
+  //     "id":1,
+  //     "name":"srinath",
+  //     "age": 23,
+  //     "email":"srinath@test.com"
+  //   },
+  //   {
+  //     "id":2,
+  //     "name":"ravi",
+  //     "age": 25,
+  //     "email":"ravi@test.com"
+  //   },
+  //   {
+  //     "id":3,
+  //     "name":"srikanth",
+  //     "age": 23,
+  //     "email":"srikanth@test.com"
+  //   }
+  // ]
+  // return(
+  //   <div>
+  //     <h2>jsx using map function </h2>
+  //     <table border="1">
+  //       <thead>
+  //         <tr>
+  //           <td>id</td>
+  //           <td>name</td>
+  //           <td>age</td>
+  //           <td>email</td>
+  //         </tr>
+  //       </thead>
+  //       <tbody>
+  //             {
+  //               userData.map((user)=>{
+  //                 return(
+  //                   <tr key={user.id}>
+  //                   <td>{user.id}</td>
+  //                   <td>{user.name}</td>
+  //                   <td>{user.age}</td>
+  //                   <td>{user.email}</td>
+  //                 </tr>
+  //                 );
+  //               })
+  //             }
+  //       </tbody>
+  //     </table>
+  //   </div>
+  // );
+
   return(
     <div>
-      <h2>Controller component</h2>
-      <form action="" method="get">
-        <input type="text" value={name} placeholder="Enter a name" onChange={(event)=>setName(event.target.value)}/>
-        <br /><br />
-        <input type="password" value={password} placeholder="Enter a password" onChange={(event)=>setPassword(event.target.value)}/>
-        <br /><br />
-        <input type="email" value={email} placeholder="Enter a Email" onChange={(event)=>setEmail(event.target.value)}/>
-        <br /><br />
-        <button>submit</button>
-        <button onClick={()=>{setName("");setPassword("");setEmail("")}}>clear</button>
+     {/* <h2>Reuse Component in loop</h2>
 
-        <h3>{name}</h3>
-        <h3>{password}</h3>
-        <h3>{email}</h3>
-      </form>
-      <Skills />
+     {
+      userData.map((user)=>{
+        return(
+          <div key={user.id}>
+            <User user={user}/>
+          </div>
+        );
+        
+      })
+     } */}
+     <CounterFunc count={count} data={data} />
     </div>
   );
 }
 
-export default App
+export default App;
