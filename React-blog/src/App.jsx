@@ -1,9 +1,7 @@
-import { useState } from "react";
-import Res from "./UserComponent";
-import Skills from "./skills";
-import User from "./UserComponent";
-import CounterFunc from "./UserComponent";
+
 // import Counter from "./UserComponent";
+
+import { useRef } from "react";
 
 // function App(){
 //   const [fruit, setFruit] = useState("Apple");
@@ -77,7 +75,7 @@ import CounterFunc from "./UserComponent";
 // export default App
 
 
-function App(){
+// function App(){
   // const userData = [
   //   {
   //     "id":1,
@@ -128,8 +126,8 @@ function App(){
   //   </div>
   // );
 
-  return(
-    <div>
+  // return(
+  //   <div>
      {/* <h2>Reuse Component in loop</h2>
 
      {
@@ -142,8 +140,85 @@ function App(){
         
       })
      } */}
-     <CounterFunc count={count} data={data} />
-    </div>
+//      <CounterFunc count={count} data={data} />
+//     </div>
+//   );
+// }
+
+// function App(){
+//   const Heading = styled.h1`
+//     color:orange;
+//     border: 1px solid green;
+    
+//   `
+//   return( 
+//     <div>
+//       <h1>this is styled component use</h1>
+//       <Heading>Hello World</Heading>
+//     </div>
+//   );
+// };
+
+
+// function App(){
+//   const inputRef = useRef(null)
+//   const inputHandler=()=>{
+//     console.log(inputRef);
+//     inputRef.current.focus();
+//     inputRef.current.style.color='red';
+//     inputRef.current.placeholder="Enter password"
+
+//   };
+
+//   return(
+//     <>
+
+//       <h1>useRef hook</h1>
+//       <input ref={inputRef} type="text" placeholder="Enter user name" />
+//       <button onClick={inputHandler}>submit</button>
+
+
+//     </>
+//   );
+// };
+
+
+// export default App; 
+
+
+function App(){
+  const handleSubmit = async() =>{
+    await new Promise(res =>setTimeout(res, 2000))
+    console.log("submit")
+  };
+
+function CustomerForm(){
+  const { pending } = useFormStatus();
+  console.log(pending);
+  return(
+    <>
+    <form action={handleSubmit}>
+      <input type="text" placeholder="Enter user name"/>
+      <br /><br />
+      <input type="text" placeholder="Enter Password" />
+      <br /><br />
+      <button disabled={pending}>{pending ? 'Submitting': 'submit'}</button>
+    </form>
+    </>
+  );
+}
+
+  return(
+    <>
+    <h2>useFormState using form subimission</h2>
+    <form action={handleSubmit}>
+      <input type="text" placeholder="Enter user name"/>
+      <br /><br />
+      <input type="text" placeholder="Enter Password" />
+      <br /><br />
+      <button>Submit</button>
+    </form>
+    </>
   );
 }
 
