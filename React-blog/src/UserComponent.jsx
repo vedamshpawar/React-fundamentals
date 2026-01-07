@@ -97,33 +97,33 @@ import { useEffect, useState } from "react"
 // export default User
 
 
-function CounterFunc({count, data}){
+// function CounterFunc({count, data}){
 
-    const [count, setCount] = useState(0)
-    const [data, setData] = useState(0)
+//     const [count, setCount] = useState(0)
+//     const [data, setData] = useState(0)
 
-    function counter(){
-        console.log('counting the count')
-    };
+//     function counter(){
+//         console.log('counting the count')
+//     };
 
-    function callOnce(){
-        console.log('call for one time')
-    };
+//     function callOnce(){
+//         console.log('call for one time')
+//     };
 
-useEffect(()=>{
-    counter();
-},[]);
+// useEffect(()=>{
+//     counter();
+// },[]);
 
-useEffect(()=>{
-    callOnce();
-},[count]);
-    return(
-        <div>
-            <h2>this is useEffect</h2>
-            <button onClick={()=>setCount(count + 1)}>count {count}</button>
-            <button onClick={()=>setData(data + 1)}>data {data}</button>
-        </div>
-    );
-}
+// useEffect(()=>{
+//     callOnce();
+// },[count]);
+//     return(
+//         <div>
+//             <h2>this is useEffect</h2>
+//             <button onClick={()=>setCount(count + 1)}>count {count}</button>
+//             <button onClick={()=>setData(data + 1)}>data {data}</button>
+//         </div>
+//     );
+// }
 
-export default CounterFunc;
+// export default CounterFunc;
